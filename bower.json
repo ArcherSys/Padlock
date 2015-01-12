@@ -1,0 +1,23 @@
+{
+  "name": "Padlock",
+  "version": "0.8.0",
+  "homepage": "http://padlock.io",
+  "authors": [
+    "Martin Kleinschrodt <martin@maklesoft.com>"
+  ],
+  "main": "index.html",
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "dependencies": {
+    "shape-shifter": "~0.2.1",
+    "platform": "Polymer/platform#0.3.2",
+    "polymer": "Polymer/polymer#master"
+  }
+}

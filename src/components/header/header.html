@@ -1,0 +1,25 @@
+<link rel="import" href="../../padlock.html">
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/shape-shifter/shape-shifter.html">
+<link rel="import" href="../input/input.html">
+
+<polymer-element name="padlock-header" attributes="view showFilterInput filterString scrim">
+    <template>
+        <!-- STYLES -->
+        <link href="header.css" rel="stylesheet" type="text/css">
+        <div class="{{ {'show-filter': showFilterInput, 'filtering': filterActive, 'scrim': scrim} | tokenList }}">
+            <!-- LEFT BUTTON -->
+            <shape-shifter id="leftIcon" shape="menu" on-tap="{{ leftClicked }}" springy></shape-shifter>
+            <div class="middle">
+                <!-- FILTER INPUT -->
+                <input id="filterInput" is="padlock-input" class="filter-input" value="{{ filterString }}" type="search"
+                    placeholder="{{ filterHasFocus ? 'type to search...' : 'tap to search...' }}" disabled?="{{ !showFilterInput }}" hasFocus="{{ filterHasFocus }}"/>
+                <!-- HEADER TITLE -->
+                <div class="title">{{ view.titleText }}</div>
+            </div>
+            <!-- RIGHT BUTTON -->
+            <shape-shifter id="rightIcon" shape="plus" on-tap="{{ rightClicked }}" springy></shape-shifter>
+        </div>
+    </template>
+    <script src="header.js"></script>
+</polymer-element>

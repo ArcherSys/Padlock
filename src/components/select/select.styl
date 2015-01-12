@@ -1,0 +1,51 @@
+@import "../../styles/config";
+@import "nib";
+
+:host {
+    display: block;
+    position: relative;
+}
+
+button {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    shape-shifter {
+        $size = 25px;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        width: $size;
+        height: $size;
+
+        &::shadow line {
+            stroke: $color-primary;
+        }
+    }
+}
+
+.options {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+polyfill-next-selector { content: '.options > *'; }
+::content > * {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $row-height;
+    line-height: $row-height;
+    width: 100%;
+    background: #fefefe;
+    text-align: center;
+    cursor: pointer;
+
+    transition: transform 0.3s, opacity 0.3s;
+}

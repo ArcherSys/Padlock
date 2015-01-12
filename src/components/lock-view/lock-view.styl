@@ -1,0 +1,70 @@
+@import "../../styles/config";
+@import "nib";
+
+@keyframes reveal {
+    from { transform: translate3d(0, 100%, 0); opacity: 0; }
+    50% { transform: translate3d(0, -10%, 0); opacity: 1; }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+:host {
+    display: block;
+    background: $color-primary;
+}
+
+.wrapper {
+    height: 210px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    text-align: center;
+}
+
+.header {
+    font-size: 50px;
+    font-weight: $font-weight-thin;
+    margin-bottom: 20px;
+    color: #fff;
+
+    animation: reveal 0.5s ease 0.25s both;
+}
+
+.password-input {
+    text-align: center;
+    width: 100%;
+    animation: reveal 0.5s ease 0.5s both;
+}
+
+.enter-button {
+    width: 100%;
+    margin-top: 30px;
+    animation: reveal 0.5s ease 0.75s both;
+}
+
+.error-message {
+    color: $color-red;
+    padding: 20px;
+    opacity: 0;
+
+    transform: translate(0, 100%);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.error  {
+    .error-message {
+        opacity: 1;
+
+        transform: translate(0, 0);
+    }
+
+    input {
+        color: $color-negative;
+    }
+
+    ::-webkit-input-placeholder {
+       color: $color-negative;
+    }
+}

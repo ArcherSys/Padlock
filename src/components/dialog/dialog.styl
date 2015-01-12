@@ -1,0 +1,81 @@
+@import "../../styles/config";
+@import "nib";
+
+:host {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    display: none;
+
+    .scrim {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #000;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+}
+
+:host(.open) .scrim {
+    opacity: $scrim-opacity;
+}
+
+// Failsafe in case the out animation get interrupted and
+// the dialog fails to set 'display: none'
+:host(:not(.open)) {
+    pointer-events: none;
+}
+
+.inner {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+polyfill-next-selector { content: '.inner > *'; }
+::content > * {
+    margin-bottom: 5px;
+    text-align: center;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+
+    box-sizing: border-box;
+    transform: translate3d(0, 100%, 0);
+}
+
+polyfill-next-selector { content: '.inner > .title'; }
+::content > .title {
+    background: transparent;
+    color: $text-color-light;
+    cursor: default;
+    border: none;
+    padding: 10px;
+    line-height: 25px;
+    word-wrap: break-word;
+    font-weight: $font-weight-bold;
+}
+
+polyfill-next-selector { content: '.inner > input'; }
+::content > input {
+    cursor: text;
+}
+
+polyfill-next-selector { content: ':host(.open) .inner > *'}
+:host(.open) ::content > * {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
