@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  position: relative;
+}
+button {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+button shape-shifter {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 25px;
+  height: 25px;
+}
+button shape-shifter::shadow line {
+  stroke: #59c6ff;
+}
+.options {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+polyfill-next-selector {
+  content: '.options > *';
+}
+::content > * {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background: #fefefe;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  -o-transition: -o-transform 0.3s, opacity 0.3s;
+  -ms-transition: -ms-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+}

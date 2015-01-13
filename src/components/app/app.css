@@ -1,0 +1,119 @@
+:host {
+  font-family: "Clear Sans", sans-serif;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  font-weight: 400;
+  font-size: 18px;
+  color: #333;
+  -webkit-tap-highlight-color: transparent;
+  background: #f5f5f5;
+  overflow: hidden;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+/*
+        These are are elements that should be styled consistently accross the app,
+        therefore the selectors should cross all shadow dom boundaries.
+     */
+}
+:host,
+:host /deep/ button,
+:host /deep/ input {
+  -webkit-font-smoothing: antialiased;
+}
+:host /deep/ a {
+  text-decoration: none;
+  color: inherit;
+}
+:host /deep/ button,
+:host /deep/ a.button {
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  background: #fff;
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  cursor: pointer;
+  color: #59c6ff;
+  text-align: center;
+}
+:host /deep/ button.primary {
+  background: #59c6ff;
+  color: #fff;
+}
+:host /deep/ button.negative {
+  background: #f00;
+  color: #fff;
+}
+:host /deep/ button.ghost {
+  background: transparent;
+  color: #fff;
+  border-top: solid 2px #fff;
+  border-bottom: solid 2px #fff;
+  font-weight: 600;
+  line-height: 46px;
+}
+:host /deep/ input {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: #fff;
+  margin: 0;
+  height: 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:host /deep/ input.ghost {
+  background: transparent;
+  color: #fff;
+  border-bottom: solid 1px #fff;
+  width: 80%;
+  height: 40px;
+}
+:host /deep/ input.ghost::-webkit-input-placeholder {
+  color: #fff;
+}
+:host /deep/ strong {
+  font-weight: 700;
+  color: #59c6ff;
+}
+:host /deep/ ::-webkit-search-cancel-button {
+  display: none;
+}
+:host /deep/ *:focus {
+  outline: none;
+}
+:host /deep/ ::-webkit-input-placeholder {
+  color: #c5c5c5;
+}
+:host(.ios-standalone) padlock-header::shadow > div {
+  padding-top: 20px;
+}
+:host(.ios-standalone) .view {
+  padding-top: 70px;
+}
+padlock-progress#decrypting {
+  background: #ff8283;
+  z-index: 10;
+}
+padlock-progress#synchronizing {
+  background: #9eed6d;
+}
